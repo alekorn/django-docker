@@ -18,7 +18,7 @@ django development server + postgres or sqllite db
 	```
 	or manually:
 	```
-	$ docker-compose up -d --build
+	$ docker compose up -d --build
 	```
 4.  Go to  [http://localhost:8000](http://localhost:8000/). The _/app_ directory is mounted into the container. Your code changes apply automatically.
 
@@ -37,7 +37,7 @@ nginx + gunicorn + postgres db
 	```
 	or manually:
 	```
-	$ docker-compose -f docker-compose.prod.yml up -d --build
+	$ docker compose -f docker-compose.prod.yml up -d --build
 	```
 4.  Go to  [http://localhost:1234](http://localhost:1234/). No mounted directories. After changing code you need to rebuild image.
 
