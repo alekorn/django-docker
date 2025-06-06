@@ -9,8 +9,8 @@ services:
     volumes:
       - static_volume:/app/staticfiles
       # use volume or mount
-      # - media_volume:/app/mediafiles
-      - ./app/mediafiles:/app/mediafiles
+      - media_volume:/app/mediafiles
+      # - ./app/mediafiles:/app/mediafiles
     expose:
       - 8000
     env_file:
@@ -30,8 +30,8 @@ services:
     volumes:
       - static_volume:/app/staticfiles
       # use volume or mount
-      # - media_volume:/app/mediafiles
-      - ./app/mediafiles:/app/mediafiles
+      - media_volume:/app/mediafiles
+      # - ./app/mediafiles:/app/mediafiles
     ports:
       - 1234:80
     depends_on:
@@ -41,4 +41,4 @@ volumes:
   postgres_data:
   static_volume:
   # use volume or mount
-  # media_volume:
+  media_volume:

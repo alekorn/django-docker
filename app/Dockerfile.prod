@@ -7,7 +7,9 @@ RUN adduser -D -h /home/user user
 
 WORKDIR /app
 
-RUN chown -R user:user /app
+RUN mkdir -p /app/staticfiles && \
+    mkdir -p /app/mediafiles && \
+    chown -R user:user /app
 
 COPY requirements.txt ./
 
