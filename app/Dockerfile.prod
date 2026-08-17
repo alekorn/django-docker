@@ -1,4 +1,4 @@
-FROM python:3.11-alpine3.20
+FROM python:3.14-alpine
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1
@@ -10,6 +10,8 @@ WORKDIR /app
 RUN mkdir -p /app/staticfiles && \
     mkdir -p /app/mediafiles && \
     chown -R user:user /app
+
+RUN apk add --no-cache postgresql-dev gcc musl-dev linux-headers
 
 COPY requirements.txt ./
 

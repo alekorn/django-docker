@@ -1,4 +1,4 @@
-FROM python:3.11-alpine3.20
+FROM python:3.14-alpine
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1
@@ -6,6 +6,8 @@ ENV PYTHONUNBUFFERED=1 \
 RUN adduser -D -h /home/user user
 
 WORKDIR /app
+
+RUN apk add --no-cache postgresql-dev gcc musl-dev linux-headers
 
 COPY requirements.txt ./
 
