@@ -20,4 +20,4 @@ def image_upload(request):
         image_url = fs.url(filename)
         if image_url:
             context["image_url"] = image_url
-    return render(request, "upload.html", context)
+    return render(request, "upload/upload.html", context)
